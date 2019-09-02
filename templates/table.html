@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="/static/css/reset.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+   <link rel="stylesheet" href="/static/css/style.css">
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+   <script src="https://kit.fontawesome.com/ced79a0d9b.js"></script>
+   <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+   <script src="../static/js/leaflet.ajax.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+   <title>US Disaster Spending: Data</title>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg nav-style">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon">
+            <i class="fas fa-bars"></i>
+         </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav">
+            <li class="nav-brand">
+               <a class="nav-link" href="/">Federal</a>
+            </li>
+            <li class="nav-brand">
+               <a class="nav-link" href="/state">State</a>
+            <li class="nav-brand">
+               <a class="nav-link current-page">Data Exploration</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <div class="title-cont">
+      <div class="container all-title-cont">
+         <h1 class="display-4">Data Exploration:</h1>
+         <h1>A look at the disasters</h1><hr>
+         <p>
+            &emsp;Take a look through the data used in the creating the visualizations that you have seen. 1,000 records will be shown out of the 100,000+ records used.
+            Use the filtering functionality to view specific records by month, year, state, county, and disaster type.
+         </p>
+      </div>
+   </div>
+   <div class="container" id="table-cont">
+      <div class="row justify-content-around total">
+         <div class="col-lg-2" id="filt-col">
+            <div class="panel panel-default">
+               <div class="panel-body">
+                  <div class="panel-heading">
+                     Filters
+                  </div>
+                  <form>
+                     <div class="form-group">
+                        <ul class="list-group" id="filters">
+                           <li class="filter list-group-item">
+                              <label for="date">Month</label>
+                              <input class="form-control" id="monthDeclared" type="text" placeholder="May">
+                           </li>
+                           <li class="filter list-group-item">
+                              <label for="date"> Year</label>
+                              <input class="form-control" id="fyDeclared" type="text" placeholder="2011">
+                           </li>
+                           <li class="filter list-group-item">
+                              <label for="date">State</label>
+                              <input class="form-control" id="state" type="text" placeholder="Utah">
+                           </li>
+                           <li class="filter list-group-item">
+                              <label for="date">County</label>
+                              <input class="form-control" id="county" type="text" placeholder="Cache">
+                           </li>
+                           <!-- <li class="filter list-group-item">
+                              <label for="date">Type</label>
+                              <input class="form-control" id="incidentType" type="text" placeholder="Hurricane">
+                           </li> -->
+                           
+                           
+                           <li class="filter list-group-item">
+                              <label for="date">Type</label>
+                              <select class="form-control" id="incidentType" aria-placeholder="Disaster">
+                                 <option value="">Disaster</option>
+                                 <option value="Chemical">Chemical</option>
+                                 <option value="Coastal Storm">Coastal Storm</option>
+                                 <option value="Dam/Levee Break">Dam/Levee Break</option>
+                                 <option value="Drought">Drought</option>
+                                 <option value="Earthquake">Earthquake</option>
+                                 <option value="Fire">Fire</option>
+                                 <option value="Flood">Flood</option>
+                                 <option value="Freezing">Freezing</option>
+                                 <option value="Hurricane">Hurricane</option>
+                                 <option value="Severe Ice Storm">Ice Storm</option>
+                                 <option value="Mud/Landslide">Mud/Landslide</option>
+                                 <option value="Severe Storm(s)">Severe Storm</option>
+                                 <option value="Snow">Snow</option>
+                                 <option value="Terrorist">Terrorist</option>
+                                 <option value="Tornado">Tornado</option>
+                                 <option value="Tsunami">Tsunami</option>
+                                 <option value="Typhoon">Typhoon</option>
+                                 <option value="Volcano">Volcano</option>
+                                 <option value="Other">Other</option>
+                              </select>
+                           </li>
+                           
+                           
+                           <li class="filter list-group-item">
+                              <label for="date">Maximum Return: 1,000 records</label>
+                           </li>
+                        </ul>
+                        <div id="form-btns">
+                           <button type="submit" class="btn btn-primary filt-btns" id="filter-btn">
+                              Filter Table
+                           </button>
+                           <button type="submit" class="btn btn-primary filt-btns" id="un-filter-btn">
+                              Reset
+                           </button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-10">
+            <table class="table table-bordered table-responsive table-hover table-striped" id="disaster-table">
+               <thead class="thead-light">
+                  <tr>
+                     <th class="table-head">Disaster Title</th>
+                     <th class="table-head">Disaster Type</th>
+                     <th class="table-head">Damage Category</th>
+                     <th class="table-head">State</th>
+                     <th class="table-head">County</th>
+                     <th class="table-head">Year Declared</th>
+                     <th class="table-head">Month</th>
+                     <th class="table-head">Amount Obligated</th>
+                  </tr>
+               </thead>
+               <tbody></tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+   <div class="container footer">
+      <div class="row align-items-center justify-content-around foot">
+         <div class="col align-self-center">
+            <i class="fab fa-github"></i>  
+            <a href="https://github.com/EckBen/US-Disaster-Spending">Github Repository</a>
+         </div>
+         <div class="col align-self-center">
+            <i class="fas fa-university"></i>  
+            <a href="https://www.fema.gov/openfema">Website Used to Gather Data</a>
+         </div>
+         <div class="col align-self-center">
+            <div>Created: June 2019</div>
+         </div>
+      </div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script> 
+   <script src="../static/json/data.js"></script>
+   <script src="../static/js/tableAll.js"></script>
+   <script>
+      $(document).ready( function () {
+      $('#disaster-table').DataTable( {
+         searching: false,
+      });
+      } );
+   </script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+a {
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+    color: #3792bd;
+  }
+
+hr {
+    border-color: #3792bd;
+    border-width: 2px;
+}
+
+body {
+    font-family: 'Arial Black', 'Trebuchet MS', Verdana;
+    overflow: auto;
+    background-image: url(/static/imgs/background.jpg);
+    background-attachment: fixed;
+    background-position: left;
+}
+
+div {
+    word-wrap: break-word;
+}
+
+label {
+    font-size: 14px;
+}
+
+span {
+    color: #afafaf;
+}
+
+/* thead {
+    font-size: 16px;
+    background-color: rgba(0,0,0,0.4);
+    color: #3792bd;
+}
+
+table{
+    max-height: 635px;
+    max-width: 1255px;
+} */
+
+::placeholder { 
+    color: rgba(41, 41, 41, 0.4);
+}
+
+.caption {
+    max-width: 60%;
+    font-size: 12px;
+    background-color: white;
+    border-radius: 0px 0px 15px 15px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+}
+
+.chart-col {
+    max-width: 75%;
+    padding-left: 0px;
+    border-radius: 0px 15px 15px 0px;
+    background-color: white;
+}
+
+.chart-col-right {
+    max-width: 75%;
+    padding-right: 0px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: white;
+}
+
+.chart {
+    height: 100%;
+    width: auto;
+    min-height: 600px;
+    padding: 10px;
+}
+
+.chart-img-row {
+    margin-bottom: 60px;
+}
+
+.current-page {
+    color: rgb(128, 128, 128) !important;
+}
+
+.current {
+    color: #3792bd !important;
+}
+
+.fas.fa-bars {
+    color:white;
+}
+
+.foot {
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.footer {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+.hide {
+    height: 0px !important;
+    padding: 0px !important;
+}
+
+.j-jumbotron {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    border-radius: 15px;
+}
+
+.leaflet-popup-content-wrapper {
+    background-color: black;
+    color: white;
+}
+
+.leaflet-popup-tip {
+    background: black;
+}
+
+.list-group-item:first-child {
+    border-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-radius: 0px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.maps {
+    max-width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.nav-style{
+    margin-bottom: 40px;
+    background-color: black;
+}
+
+.panel-heading {
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px 15px 0px 0px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.sm-map {
+    height: 350px;
+    width: 92%;
+    margin: 2%;
+    padding: 0px;
+}
+
+.title-cont {
+    background-color: white;
+    width: 70%;
+    margin-left: 30%;
+    margin-bottom: 75px;
+    border-radius: 15px 0px 0px 15px;
+    padding: 5px;
+}
+
+.wrecks {
+    max-width: 60%;
+    height: auto;
+    border-radius: 15px 15px 0px 0px;
+}
+
+#chart-container {
+    max-width: 2000px;
+    margin-bottom: 60px;
+}
+
+#country-map {
+    height: 720px;
+    width: 100%;
+}
+
+#disaster-table_info {
+    color: black;
+}
+
+#disaster-table_wrapper {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 1400px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ellipsis {
+    color: black;
+}
+
+.paginate_button {
+    color: black;
+    margin-left: 3px;
+}
+
+.total {
+    margin-bottom: 10px;
+}
+
+/* #disaster-table {
+    font-size: 12px;
+    font-weight: normal;
+    color: #b4b4b4;
+} */
+
+.all-title-cont {
+    margin-left: 2%;
+}
+
+#filters {
+    color: black;
+}
+
+#form-btns {
+    background-color: white;
+    border-radius: 0px 0px 15px 15px;
+    padding-top: 10px;
+}
+
+.filt-btns {
+    background-color: #b4b4b4;
+    border-color: white;
+    color: black;
+    font-size: 12px;
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 80px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#a-h-maps {
+    padding-right: 0px;
+}
+
+#a-h-row {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+#all-maps {
+    max-width: 100%;
+    margin: 0px;
+}
+
+#radarChart {
+    background-color: white;
+}
+
+#state-info-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 4.5%;
+    max-width: 100%;
+    width: 80%;
+    padding: 1%;
+    border-radius: 20px;
+}
+
+#state-jumbotron {
+    padding: 10px;
+    width: 99%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+#state-map {
+    height: 712px;
+    width: 500px;
+}
+
+#state-map-container {
+    margin: 0%;
+    height: 100%;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: white;
+}
+
+#filt-col {
+    min-width: 160px;
+    margin-left: auto;
+}
+
+/* #table-area {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+}
+
+#table-cont {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 91%;
+    max-width: 2000px;
+} */
+
+#table-cont {
+    margin: 0px;
+    width: 100%;
+    max-width: 2000px;
+}
+
+
+
+@media screen and (max-width: 768px) {    
+    .caption {
+        max-width: 80%;
+    }
+    
+    .chart-col {
+        max-width: 100%;
+        border-radius: 0px;
+    }
+    
+    .chart-col-right {
+        max-width: 100%;
+        border-radius: 0px;
+    }
+
+    .chart-img-row {
+        margin-bottom: 0px;
+    }
+
+    .col-md-5 {
+        margin-bottom: 100px;
+    }
+
+    .col-md-7 {
+        margin-bottom: 100px;
+    }
+    
+    .nav-style {
+        margin-bottom: 115px;
+    }
+
+    .title-cont {
+        width: 100%;
+        margin-left: 0%;
+        margin-bottom: 100px;
+        border-radius: 0px;
+        padding: 35px;
+    }
+    
+    .wrecks {
+        max-width: 80%;
+    }
+
+    #chart-container {
+        margin-bottom: 0px;
+    }
+
+    .all-title-cont {
+        margin-left: 0%;
+    }
+}
+
+@media screen and (max-width: 945px) {    
+    #state-map {
+        width: 100%;
+        max-height: 360px;
+    }
+
+    #state-info-container {
+        width: 100%;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 1100px) {    
+    #disaster-table_wrapper {
+        padding: 0%;
+    }
+}
